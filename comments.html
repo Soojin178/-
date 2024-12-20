@@ -4,72 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>댓글 기능</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    #comment-section {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    #comments {
-      margin-top: 20px;
-      border-top: 1px solid #ddd;
-      padding-top: 10px;
-    }
-    .comment {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-      word-wrap: break-word;
-    }
-    #comment-input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      resize: none;
-    }
-    #comment-button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    #comment-button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+  <title>댓글 기능 (Cusdis)</title>
 </head>
 <body>
-  <div id="comment-section">
-    <h3>댓글</h3>
-    <textarea id="comment-input" placeholder="댓글을 입력하세요..." rows="4"></textarea>
-    <button id="comment-button">댓글 남기기</button>
-    <div id="comments"></div>
+  <h3>댓글</h3>
+
+  <!-- Cusdis 댓글 섹션 -->
+  <div id="cusdis_thread"
+       data-host="https://cusdis.com"
+       data-app-id="e627d6d5-b099-44f3-bab5-d4af5bba04b4"
+       data-page-id="comments-page"
+       data-page-url="https://soojin178.github.io/comments.html"
+       data-page-title="My Comments Page">
   </div>
 
-  <script>
-    document.getElementById('comment-button').addEventListener('click', function() {
-      const input = document.getElementById('comment-input');
-      const commentsContainer = document.getElementById('comments');
-      const commentText = input.value.trim();
-
-      if (commentText) {
-        const newComment = document.createElement('div');
-        newComment.classList.add('comment');
-        newComment.textContent = commentText;
-        commentsContainer.appendChild(newComment);
-        input.value = '';
-      } else {
-        alert('댓글을 입력해주세요.');
-      }
-    });
-  </script>
+  <!-- Cusdis 스크립트 -->
+  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </body>
 </html>
